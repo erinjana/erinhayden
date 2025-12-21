@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Bravery Books">
+  <div class="container mt-lg mb-lg">
+    <header class="page-header text-center">
+      <h1>Bravery Books</h1>
+      <p class="subtitle">Stories that inspire courage, understanding, and connection.</p>
+    </header>
+
+    <div class="books-intro text-center">
+      <p>Bravery Books is an independent publishing imprint dedicated to sharing stories that matter. We focus on narratives that highlight resilience, celebrate diversity, and empower young readers to embrace their unique selves.</p>
+    </div>
+
+    <div class="books-grid mt-lg">
+      <!-- Placeholder for Book 1 -->
+      <div class="book-card">
+        <div class="book-cover-placeholder">Book Cover</div>
+        <div class="book-details">
+          <h3>The Courage to Be Me</h3>
+          <p class="author">by Erin Hayden</p>
+          <p class="description">A heartwarming tale about finding your voice in a noisy world.</p>
+          <button class="btn btn-sm">Coming Soon</button>
+        </div>
+      </div>
+
+      <!-- Placeholder for Book 2 -->
+      <div class="book-card">
+        <div class="book-cover-placeholder">Book Cover</div>
+        <div class="book-details">
+          <h3>Different is Daring</h3>
+          <p class="author">by Erin Hayden</p>
+          <p class="description">Celebrating the superpowers that make us unique.</p>
+          <button class="btn btn-sm">Coming Soon</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 3rem;
+  }
+
+  .books-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  .book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .book-cover-placeholder {
+    width: 200px;
+    height: 300px;
+    background-color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .book-details h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .author {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    margin-bottom: 1.5rem;
+  }
+</style>

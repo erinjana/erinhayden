@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About">
+  <div class="container mt-lg mb-lg">
+    <div class="about-grid">
+      <div class="about-image">
+        <!-- Placeholder for Erin's image -->
+        <div class="placeholder-img">Erin Hayden</div>
+      </div>
+      <div class="about-content">
+        <h1>About Erin Hayden</h1>
+        <p class="lead">Educator, Writer, Advocate, and Founder of Bravery Books.</p>
+        
+        <p>With over a decade of experience in education and a lifetime of personal advocacy, I am dedicated to creating spaces where everyone belongs. My work bridges the gap between policy and practice, ensuring that individuals with disabilities are not just accommodated, but celebrated.</p>
+        
+        <h2>My Journey</h2>
+        <p>My path began in the classroom, where I saw firsthand the challenges students with diverse needs face. This inspired me to pursue further expertise in special education and eventually launch my consulting practice. I believe that education is the most powerful tool for social change.</p>
+        
+        <h2>Advocacy & Writing</h2>
+        <p>Through my writing and speaking engagements, I aim to shed light on the nuances of disability rights. Whether it's op-eds, blog posts, or my upcoming book projects, my goal is to foster empathy and understanding.</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .placeholder-img {
+    width: 100%;
+    height: 400px;
+    background-color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .placeholder-img {
+      height: 300px;
+    }
+  }
+</style>

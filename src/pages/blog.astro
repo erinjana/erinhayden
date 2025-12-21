@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Placeholder data for blog posts
+const posts = [
+  {
+    title: "Why Advocacy Matters in 2024",
+    date: "October 15, 2024",
+    excerpt: "Exploring the changing landscape of disability rights and how we can all contribute to a more inclusive society.",
+    slug: "#"
+  },
+  {
+    title: "Navigating the IEP Process",
+    date: "September 28, 2024",
+    excerpt: "A parent's guide to understanding Individualized Education Programs and ensuring your child gets the support they need.",
+    slug: "#"
+  },
+  {
+    title: "The Power of Storytelling",
+    date: "September 10, 2024",
+    excerpt: "How sharing our personal narratives can break down barriers and build bridges of empathy.",
+    slug: "#"
+  }
+];
+---
+
+<Layout title="Blog">
+  <div class="container mt-lg mb-lg">
+    <header class="page-header text-center">
+      <h1>Blog</h1>
+      <p class="subtitle">Thoughts on education, advocacy, and life.</p>
+    </header>
+
+    <div class="blog-list">
+      {posts.map((post) => (
+        <article class="blog-post">
+          <h2><a href={post.slug}>{post.title}</a></h2>
+          <p class="date">{post.date}</p>
+          <p class="excerpt">{post.excerpt}</p>
+          <a href={post.slug} class="read-more">Read Article &rarr;</a>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .blog-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .blog-post {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .blog-post:last-child {
+    border-bottom: none;
+  }
+
+  .blog-post h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-post h2 a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .blog-post h2 a:hover {
+    color: var(--color-accent);
+  }
+
+  .date {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .excerpt {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .read-more {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+</style>

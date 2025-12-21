@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services">
+  <div class="container mt-lg mb-lg">
+    <header class="page-header text-center">
+      <h1>Services</h1>
+      <p class="subtitle">Tailored solutions for schools, organizations, and families.</p>
+    </header>
+
+    <div class="services-list">
+      <section class="service-item">
+        <div class="service-content">
+          <h2>Educational Consulting</h2>
+          <p>I partner with schools and districts to audit and improve their special education programs. My approach focuses on creating inclusive environments where every student can thrive.</p>
+          <ul class="feature-list">
+            <li>Program Evaluation & Audits</li>
+            <li>IEP Compliance & Best Practices</li>
+            <li>Professional Development for Staff</li>
+            <li>Inclusive Curriculum Design</li>
+          </ul>
+        </div>
+      </section>
+<section class="service-item">
+  <div class="service-content">
+    <h2>Mobile Notary Services</h2>
+    <p>
+      When important paperwork needs to be signed, it can come with stress, time pressure, and a lot of logistics.
+      I provide mobile notary services across Indiana, meeting clients where they are so the process feels simple,
+      respectful, and accessible.
+    </p>
+    <ul class="feature-list">
+      <li>Mobile notarization at home, work, or public meeting locations</li>
+      <li>Loan signings & closing paperwork (Licensed Title Agent)</li>
+      <li>Hospital, nursing facility, and bed-bound notarizations</li>
+      <li>Education-related documents notarized in home, workplace, or school settings</li>
+    </ul>
+  </div>
+</section>
+      <section class="service-item">
+        <div class="service-content">
+          <h2>Advocacy & Speaking</h2>
+          <p>Available for keynote speeches, panel discussions, and workshops on disability rights, accessibility, and educational equity.</p>
+          <ul class="feature-list">
+            <li>Keynote Speaking</li>
+            <li>Parent Advocacy Workshops</li>
+            <li>Corporate Accessibility Training</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="service-item">
+        <div class="service-content">
+          <h2>Writing & Editorial</h2>
+          <p>Professional writing services specializing in educational content, disability narratives, and children's literature.</p>
+          <ul class="feature-list">
+            <li>Content Strategy</li>
+            <li>Ghostwriting</li>
+            <li>Editorial Consulting</li>
+          </ul>
+        </div>
+      </section>
+      
+
+    </div>
+
+    <div class="cta-section text-center mt-lg">
+      <h3>Ready to work together?</h3>
+      <a href="/contact" class="btn">Get in Touch</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    margin-bottom: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 1rem auto 0;
+  }
+
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .service-item {
+    padding: 2rem;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+  }
+
+  .service-item h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .feature-list li::before {
+    content: '•';
+    color: var(--color-accent);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  .cta-section {
+    background-color: var(--color-secondary);
+    padding: 3rem;
+    border-radius: 8px;
+  }
+
+  .cta-section h3 {
+    margin-bottom: 1.5rem;
+  }
+</style>
