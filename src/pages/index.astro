@@ -3,30 +3,37 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
+
+
   <section class="hero-warm">
     <div class="container hero-inner">
       <div class="hero-content">
-        <span class="greeting">Hey there, I'm Erin.</span>
+        <span class="greeting">Welcome!</span>
         <h1>
-  I help families, educators, and communities navigate complex moments with clarity, compassion, and care.
+  I help families, educators and communities navigate challenging situations with clarity, compassion and care.
 </h1>
 
         <p class="hero-text">
   Navigating disability advocacy, education systems, and important paperwork can feel overwhelming.
   You don’t have to do it alone.
-  I’m here to walk beside you with experience, empathy, and a clear path forward, whether that means advocacy, professional learning, or making sure critical documents are handled with respect and ease.
+  I’m here to walk beside you with experience, empathy, and a clear path forward, whether that means consulting, professional development or making sure critical documents are handled with respect and ease.
 </p>
 
 
         <div class="hero-buttons">
-          <a href="/services" class="btn btn-warm">Work with Erin</a>
-          <a href="/about" class="btn btn-text">Explore Services &rarr;</a>
+          <a href="/about" class="btn btn-warm">About Erin</a>
+          <a href="/services" class="btn btn-text">Explore Services &rarr;</a>
         </div>
       </div>
-      <div class="hero-image-placeholder">
-        <!-- Placeholder for a warm, friendly photo of Erin -->
-        <div class="img-box">Erin's Photo</div>
-      </div>
+      <div class="hero-image">
+  <img
+    src="/images/erin-2025-headshot.jpeg"
+    alt="Erin Hayden"
+    class="hero-photo"
+    loading="lazy"
+  />
+</div>
+
     </div>
   </section>
 
@@ -54,7 +61,7 @@ import Layout from '../layouts/Layout.astro';
             </svg>
           </div>
           <h3>Smart Goals</h3>
-          <p>Your family is unique. Let's work together to create solutions that meet your needs.</p>
+          <p>Every family is unique. Let's work together to create solutions that meet your needs.</p>
         </div>
         <div class="soft-card card-sand">
           <div class="card-icon">
@@ -141,12 +148,14 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .greeting {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-family: 'Allura', cursive;
+    font-size: 6rem;
     color: var(--color-accent);
     display: block;
-    margin-bottom: 1rem;
-    font-style: italic;
+    margin-bottom: 3.5rem;
+    transform: rotate(-10deg);
+    line-height: 1;
+    margin-left: -1rem; /* Slight offset to balance the tilt */
   }
 
   .hero-warm h1 {

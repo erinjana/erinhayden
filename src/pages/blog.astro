@@ -1,27 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Parser from 'rss-parser';
 
-// Placeholder data for blog posts
-const posts = [
-  {
-    title: "Why Advocacy Matters in 2024",
-    date: "October 15, 2024",
-    excerpt: "Exploring the changing landscape of disability rights and how we can all contribute to a more inclusive society.",
-    slug: "#"
-  },
-  {
-    title: "Navigating the IEP Process",
-    date: "September 28, 2024",
-    excerpt: "A parent's guide to understanding Individualized Education Programs and ensuring your child gets the support they need.",
-    slug: "#"
-  },
-  {
-    title: "The Power of Storytelling",
-    date: "September 10, 2024",
-    excerpt: "How sharing our personal narratives can break down barriers and build bridges of empathy.",
-    slug: "#"
-  }
-];
+const parser = new Parser();
+let posts = [];
+
+try {
+  const feed = await parser.parseURL('https://ejhayden.substack.com/feed');
+  posts = feed.items.map(item => ({
+    title: item.title,
+    date: new Date(item.pubDate).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }),
+    excerpt: item.contentSnippet ? item.contentSnippet.substring(0, 200) + '...' : '',
+    slug: item.link,
+    image: item.enclosure?.url
+  }));
+} catch (error) {
+  console.error("Error fetching Substack feed:", error);
+  // Fallback or empty state could be handled here
+}
 ---
 
 <Layout title="Blog">
@@ -32,28 +32,42 @@ const posts = [
     </header>
 
     <div class="blog-list">
-      {posts.map((post) => (
-        <article class="blog-post">
-          <h2><a href={post.slug}>{post.title}</a></h2>
-          <p class="date">{post.date}</p>
-          <p class="excerpt">{post.excerpt}</p>
-          <a href={post.slug} class="read-more">Read Article &rarr;</a>
-        </article>
-      ))}
+      {posts.length > 0 ? (
+        posts.map((post) => (
+          <article class={`blog-post ${post.image ? 'has-image' : ''}`}>
+            {post.image && (
+              <a href={post.slug} target="_blank" rel="noopener noreferrer" class="post-image-link">
+                <img src={post.image} alt={post.title} class="post-image" />
+              </a>
+            )}
+            <div class="post-content">
+              <h2><a href={post.slug} target="_blank" rel="noopener noreferrer">{post.title}</a></h2>
+              <p class="date">{post.date}</p>
+              <p class="excerpt">{post.excerpt}</p>
+              <a href={post.slug} class="read-more" target="_blank" rel="noopener noreferrer">Read Article &rarr;</a>
+            </div>
+          </article>
+        ))
+      ) : (
+        <p class="text-center">Loading posts from Substack...</p>
+      )}
     </div>
   </div>
 </Layout>
 
 <style>
   .blog-list {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
   }
 
   .blog-post {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     padding-bottom: 3rem;
     border-bottom: 1px solid var(--color-border);
   }
@@ -62,13 +76,42 @@ const posts = [
     border-bottom: none;
   }
 
+  .post-image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .post-image-link:hover {
+    transform: translateY(-5px);
+  }
+
+  .post-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .post-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   .blog-post h2 {
     margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
   }
 
   .blog-post h2 a {
     color: var(--color-primary);
     text-decoration: none;
+    transition: color 0.2s ease;
   }
 
   .blog-post h2 a:hover {
@@ -79,15 +122,42 @@ const posts = [
     color: #888;
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .excerpt {
     margin-bottom: 1.5rem;
     line-height: 1.7;
+    color: #555;
   }
 
   .read-more {
     font-weight: 600;
     font-size: 0.95rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    .blog-post.has-image {
+      flex-direction: row;
+      align-items: start;
+      gap: 3rem;
+    }
+
+    .post-image-link {
+      width: 320px;
+      height: 220px;
+    }
+    
+    .post-image {
+      height: 100%;
+    }
   }
 </style>

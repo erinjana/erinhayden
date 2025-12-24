@@ -3,39 +3,271 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Bravery Books">
-  <div class="container mt-lg mb-lg">
+  <div class="container container-wide mt-lg mb-lg">
     <header class="page-header text-center">
       <h1>Bravery Books</h1>
       <p class="subtitle">Stories that inspire courage, understanding, and connection.</p>
     </header>
 
     <div class="books-intro text-center">
-      <p>Bravery Books is an independent publishing imprint dedicated to sharing stories that matter. We focus on narratives that highlight resilience, celebrate diversity, and empower young readers to embrace their unique selves.</p>
+      <p>Through this publishing project, Erin shares stories that highlight resilience, celebrate diversity and empower readers of all ages to embrace their unique selves.</p>
     </div>
 
-    <div class="books-grid mt-lg">
-      <!-- Placeholder for Book 1 -->
-      <div class="book-card">
-        <div class="book-cover-placeholder">Book Cover</div>
-        <div class="book-details">
-          <h3>The Courage to Be Me</h3>
-          <p class="author">by Erin Hayden</p>
-          <p class="description">A heartwarming tale about finding your voice in a noisy world.</p>
-          <button class="btn btn-sm">Coming Soon</button>
-        </div>
-      </div>
+    <!-- Series Grid Wrapper -->
+    <div class="series-layout-grid mt-xl">
+      
+      <!-- Vista del Vino Series (Carousel) -->
+      <section class="series-section">
+        <h2 class="text-center section-title">
+          <a href="https://mybook.to/VistaDelVino" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+            Vista del Vino Cozy Mystery Series
+          </a>
+        </h2>
+        
+        <h3 class="text-center series-subtitle">
+          <a href="https://www.audible.com/pd/B0DNNNMQZQ/?source_code=AUDFPWS0223189MWT-BK-ACX0-421954&ref=acx_bty_BK_ACX0_421954_rh_us" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+            First three books now available on audio
+          </a>
+        </h3>
+        
+        <div class="series-blurb-container mb-md" id="vista-blurb">
+          <div class="series-blurb-content">
+            <p>Welcome to Vista del Vino, a cozy mystery series set in Southern California wine country, where rolling vineyards, small-town traditions, and close-knit communities hide more secrets than they let on.</p>
 
-      <!-- Placeholder for Book 2 -->
-      <div class="book-card">
-        <div class="book-cover-placeholder">Book Cover</div>
-        <div class="book-details">
-          <h3>Different is Daring</h3>
-          <p class="author">by Erin Hayden</p>
-          <p class="description">Celebrating the superpowers that make us unique.</p>
-          <button class="btn btn-sm">Coming Soon</button>
+            <p>At the heart of the series is Casey Nolan, a smart, determined amateur sleuth and anxiety-ridden single mom doing her best to hold everything together. When life pushes her to start over, Casey returns to wine country seeking the comfort of her mother’s cooking, familiar rhythms, and extra support while raising a teenage son with multiple chronic illnesses.</p>
+
+            <p>Between school schedules, medical routines, and the everyday chaos of parenting, Casey finds herself repeatedly pulled into mysteries no one else seems eager to solve. With the help of her diabetic alert dog—and later, a devoted PTSD service dog whose instincts are as sharp as her own—Casey follows clues through farmers’ markets, festivals, kitchens, and vineyards, proving that real life doesn’t pause just because murder has entered the scene.</p>
+
+            <p>The Vista del Vino Mysteries blend beloved cozy mystery tropes—small-town secrets, found family, food and wine, quirky locals, and an amateur sleuth with heart—with thoughtful, authentic representation of chronic illness, caregiving, and mental health. These stories honor the realities of parenting a medically complex child while celebrating resilience, humor, and the power of community support.</p>
+
+            <p><strong>Perfect for readers who love:</strong></p>
+            <ul>
+              <li>Cozy mysteries with relatable, capable female leads</li>
+              <li>Vineyard and small-town settings</li>
+              <li>Culinary and wine-country cozies</li>
+              <li>Service dogs and animal companions</li>
+              <li>Comfort reads with emotional depth and hope</li>
+            </ul>
+
+            <p>Pour a glass, follow the paw prints, and settle into a cozy mystery series where family comes first, community matters, and courage shows up in everyday ways.</p>
+          </div>
+          <button class="btn-read-more" aria-expanded="false" aria-controls="vista-blurb">Read More</button>
+        </div>
+
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <!-- Book 1 -->
+            <div class="book-card">
+              <img src="/images/books/murder-uncorked.jpg" alt="Murder Uncorked Book Cover" class="book-cover" />
+              <h3>Murder Uncorked</h3>
+              <a href="https://mybook.to/VistaDelVinoMysteries" target="_blank" class="btn btn-sm">Learn More</a>
+            </div>
+            <!-- Book 2 -->
+            <div class="book-card">
+              <img src="/images/books/lavenders-last-breath.jpg" alt="Lavender's Last Breath Book Cover" class="book-cover" />
+              <h3>Lavender's Last Breath</h3>
+              <a href="https://mybook.to/dCMIvYI" target="_blank" class="btn btn-sm">Learn More</a>
+            </div>
+             <!-- Book 3 -->
+             <div class="book-card">
+              <img src="/images/books/murder-under-the-harvest-moon.jpg" alt="Murder Under the Harvest Moon Book Cover" class="book-cover" />
+              <h3>Murder Under the Harvest Moon</h3>
+              <a href="https://mybook.to/kz3hKH" target="_blank" class="btn btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Sugar Squad Chronicles (Carousel) -->
+      <section class="series-section">
+        <h2 class="text-center section-title">
+          <a href="https://mybook.to/69Fz5mV" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">
+            The Sugar Squad Chronicles
+          </a>
+        </h2>
+        
+        <div class="series-blurb-container mb-md" id="sugar-squad-blurb">
+          <div class="series-blurb-content">
+            <p>Step into The Sugar Squad Chronicles, a heart-filled middle grade adventure series about friendship, courage, and finding your strength—even when life throws curveballs.</p>
+
+            <p>The series begins at Camp Sweetwater, a summer camp for kids with diabetes, where lifelong friendships are forged around campfires, inside jokes, and shared experiences. Led by Grayson and his tight-knit group of friends, the Sugar Squad learns that managing diabetes is just one part of who they are—their bravery, kindness, and loyalty matter just as much.</p>
+
+            <p>As the series unfolds, readers follow the Squad beyond camp and into the real world. From navigating family changes, bullying, and sibling separations to balancing sports, school, and chronic illness, each book explores what it means to grow up when life doesn’t always follow the plan. Along the way, the Squad tackles mysteries, road trip adventures, and moments of deep emotional reckoning—learning when to step up, when to lean on each other, and when to ask adults for help.</p>
+
+            <p>Later books expand the world of the Sugar Squad, taking readers on a cross-country road trip, into national parks and cultural landmarks, and back to Camp Sweetwater, where new counselors, old traditions, and unresolved questions test the bonds of friendship. With empathy at the forefront, the series thoughtfully addresses family illness, mental health, social justice, cultural awareness, and loss—always through the lens of hope and connection. The Sugar Squad Chronicles blend beloved middle grade tropes—found family, summer camp adventures, mysteries, teamwork, and growing independence—with authentic representation of kids living full, adventurous lives with diabetes. These are stories where bravery looks like speaking up, listening closely, and standing together.</p>
+
+            <p><strong>Perfect for readers who love:</strong></p>
+            <ul>
+              <li>Friendship-driven middle grade adventure</li>
+              <li>Camp stories and mystery plots</li>
+              <li>Books featuring kids with chronic illness</li>
+              <li>Road trip and travel adventures with heart</li>
+              <li>Stories about resilience, empathy, and belonging</li>
+            </ul>
+
+            <p>Join the Sugar Squad—and discover that heroes come in all forms, courage grows through connection, and no one has to face life alone.</p>
+          </div>
+          <button class="btn-read-more" aria-expanded="false" aria-controls="sugar-squad-blurb">Read More</button>
+        </div>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <!-- Book 1 -->
+            <div class="book-card">
+              <img src="/images/books/camp-lessons.jpg" alt="Camp Lessons Book Cover" class="book-cover" />
+              <h3>Camp Lessons</h3>
+              <a href="https://mybook.to/CampLessons" target="_blank" class="btn btn-sm">Learn More</a>
+            </div>
+            <!-- Book 2 -->
+            <div class="book-card">
+              <img src="/images/books/seasons-change.jpg" alt="Seasons Change Book Cover" class="book-cover" />
+              <h3>Seasons Change</h3>
+              <a href="https://mybook.to/SeasonsChange" target="_blank" class="btn btn-sm">Learn More</a>
+            </div>
+             <!-- Book 3 -->
+             <div class="book-card">
+              <img src="/images/books/a-camp-sweetwater-mystery.jpg" alt="A Camp Sweetwater Mystery Book Cover" class="book-cover" />
+              <h3>A Camp Sweetwater Mystery</h3>
+              <a href="https://mybook.to/SweetwaterMystery" target="_blank" class="btn btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Beta Reader CTA 1 -->
+    <div class="cta-container text-center mt-xl mb-xl">
+      <a href="#beta-reader-info" class="btn btn-primary btn-cta">Learn how to become a beta/ARC reader and read for free</a>
+    </div>
+
+    <!-- Five Minute Major (Static) -->
+    <section class="standalone-section mt-xl">
+      <div class="standalone-grid">
+        <img src="/images/books/five-minute-major.jpg" alt="Five Minute Major Book Cover" class="book-cover large" />
+        <div class="standalone-content">
+          <h2>Five Minute Major</h2>
+          
+          <div class="series-blurb-container mb-md" id="hockey-blurb">
+            <div class="series-blurb-content">
+              <p>In a sport where toughness is everything, fifteen-year-old Shea knows she can skate with the best of them—if they’ll let her. After missing official tryouts, she earns a spot on a competitive co-ed travel hockey team through a late evaluation. But from the moment she steps on the ice, it's clear her new teammates aren’t exactly thrilled to have a girl added to the roster—especially one who's ready to challenge the status quo.</p>
+
+              <p>Jayden has enough to worry about without team drama. Between pressure to keep up his grades and the daily challenge of managing Type 1 diabetes in secret, he's focused on surviving the season, not making waves. But when Shea joins the team, everything shifts. Resentment builds, rumors swirl, and tensions rise as both players find themselves on the outside.</p>
+
+              <p>As the season barrels toward the state championship, Shea and Jayden must each decide who they are, both on and off the ice. One plays through pain. The other plays through silence. But when it matters most, they might just be what the team needs to pull together.</p>
+
+              <p>Told in dual POV, Five Minute Major is a character-driven YA sports fiction novel about identity, teamwork, gender bias, and the pressure to perform.</p>
+
+              <p><strong>Perfect for fans of coming-of-age sports novels, strong female leads, and realistic teen fiction with emotional depth and authentic representation.</strong></p>
+            </div>
+            <button class="btn-read-more" aria-expanded="false" aria-controls="hockey-blurb">Read More</button>
+          </div>
+
+          <a href="https://mybook.to/FiveMinuteMajor" target="_blank" class="btn btn-warm">Learn More</a>
         </div>
       </div>
+    </section>
+
+    <!-- Superhero Moms (Static) -->
+    <section class="standalone-section mt-xl">
+      <div class="standalone-grid reverse">
+        <img src="/images/books/superhero-moms.jpg" alt="Superhero Moms Book Cover" class="book-cover large" />
+        <div class="standalone-content">
+          <h2>Superhero Moms, Warrior Kids</h2>
+          
+          <div class="series-blurb-container mb-md" id="moms-blurb">
+            <div class="series-blurb-content">
+              <p>Previously published as "Ten Tiny Fingers, Ten Tiny Toes: Caring for the Type 1 Diabetic Infant and Child," by Erin J.</p>
+              
+              <p>This powerful and deeply moving book offers a rare glimpse into the lives of nine incredible mothers raising young children with Type 1 Diabetes. With honesty, humor, and heart, they share their emotional journeys—the highs, the lows, and the resilience it takes to manage this complex disease every single day.</p>
+
+              <p>From the shock of diagnosis to the daily grind of blood sugar monitoring, insulin dosing, and sleepless nights, these moms reveal what it takes to care for a child with Type 1 Diabetes while juggling other challenges like additional health conditions, multiple children with medical needs, and even breastfeeding struggles.</p>
+
+              <p>Through their raw and heartfelt stories, you’ll find inspiration, practical insights, and the unbreakable strength of families who refuse to let T1D define their children’s futures. Whether you're a parent, caregiver, or simply someone who admires stories of perseverance, Superhero Moms, Warrior Kids will leave you feeling uplifted, informed, and deeply moved.</p>
+
+              <p><strong>Perfect for parents of newly diagnosed children, caregivers, and anyone seeking a greater understanding of Type 1 Diabetes. Packed with real-life experiences, expert-backed insights, and messages of hope. Used as a resource by children's hospitals and endocrinology clinics.</strong></p>
+            </div>
+            <button class="btn-read-more" aria-expanded="false" aria-controls="moms-blurb">Read More</button>
+          </div>
+
+          <a href="https://www.amazon.com/dp/B0CR8425X5" target="_blank" class="btn btn-warm">Get Your Copy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get to Know Frederick Banting (Static) -->
+    <section class="standalone-section mt-xl">
+      <div class="standalone-grid">
+        <img src="/images/books/get-to-know-frederick-banting.jpg" alt="Get to Know Frederick Banting Book Cover" class="book-cover large" />
+        <div class="standalone-content">
+          <h2>Get to Know Frederick Banting</h2>
+          
+          <div class="series-blurb-container mb-md" id="banting-blurb">
+            <div class="series-blurb-content">
+              <p>Get ready to embark on an incredible journey through the life of Frederick Banting—a true hero who did it all! In this fascinating nonfiction book, you'll discover the remarkable story of Frederick Banting, who was a medical researcher and so much more! He was also a brave war hero and a talented painter. But he was also a complex person with worries and faults, just like everyone else.</p>
+              
+              <p>Frederick's journey starts on a quiet farm in a small town in Canada, where he learned the value of hard work and responsibility. But as he grew up, he dreamed of doing something bigger than running the farm like his family wanted him to do. Along the way, he faced incredible challenges, like failing in his first year of college and surviving World War I.</p>
+
+              <p>Frederick's life was far from ordinary. He didn't just become a doctor—he became a medical pioneer! He discovered how to make insulin, a life-saving medicine for people with diabetes. Can you believe it? His work changed the world and has saved millions of lives over the past 100 years.</p>
+
+              <p>This book will take you on an adventure, filled with stories of courage, discovery, and the power of never giving up. Frederick Banting's life is proof of what one person can achieve with determination and a heart full of compassion. Get ready to be inspired by this incredible man who made the world a better place for millions of people around the world!</p>
+            </div>
+            <button class="btn-read-more" aria-expanded="false" aria-controls="banting-blurb">Read More</button>
+          </div>
+
+          <a href="https://www.amazon.com/dp/B0CLK6T5BT" target="_blank" class="btn btn-warm">Get Your Copy</a>
+        </div>
+      </div>
+    </section>
+
+    </section>
+
+    <!-- Beta Reader Info Section -->
+    <section id="beta-reader-info" class="standalone-section mt-xl text-center">
+      <h2 class="section-title">What are beta and ARC readers?</h2>
+      
+      <div class="series-blurb-container mb-md" id="beta-info-blurb">
+        <div class="series-blurb-content text-left">
+          <p class="intro-text">Are you passionate about books? Join Bravery Books in shaping the future of literature by becoming a Beta reader or ARC (Advance Reader Copy) reviewer. Dive into new worlds before anyone else and help Erin ensure that every story she shares resonates deeply with readers around the globe. She is often looking for adult beta readers with an interest in cozy mysteries and adult/adolescent ARC reader teams to review middle grade and YA fiction stories.</p>
+          
+          <h3 class="mt-md text-accent">What is a Beta Reader?</h3>
+          <p><strong>Description:</strong> Beta readers are crucial to the book development process, providing feedback on manuscripts before they are finalized. As a beta reader, you’ll get an early look at raw versions of manuscripts and have the opportunity to suggest improvements related to plot, character development, and structure.</p>
+          
+          <p><strong>Benefits:</strong></p>
+          <ul>
+            <li>Influence book development</li>
+            <li>Enhance your reading experience by seeing behind the scenes</li>
+            <li>Improve your own writing and analytical skills</li>
+          </ul>
+
+          <h3 class="mt-md text-accent">What is an ARC Reader (or Listener)?</h3>
+          <p><strong>Description:</strong> ARC reviewers receive nearly final versions of books before they are released to the public. These may come in print, ebook or audio, depending on what the author is looking for feedback on. Your role is to read the book and prepare a review that can be published on platforms like GoodReads, Amazon, or your personal blog upon the book’s release.</p>
+          
+          <p><strong>Benefits:</strong></p>
+          <ul>
+            <li>Be among the first to read new books</li>
+            <li>Help build buzz around upcoming releases</li>
+            <li>Increase your influence as a reviewer in the literary community</li>
+          </ul>
+
+          <div class="join-instructions mt-lg p-md bg-light rounded">
+            <p class="font-bold">Ready to Join the Team? Email Erin <a href="mailto:Erin@BraveryBooks.com">@BraveryBooks.com</a></p>
+            <p>Include the following information in your email:</p>
+            <ul>
+              <li>Your preferred broad genre(s): (adult mystery, adult nonfiction, middle-grade fiction, middle grade nonfiction)</li>
+              <li>Your team preference (beta, ARC or both)</li>
+              <li>Your experience with beta/ARC reading (previous experience is not needed to join the team)</li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn-read-more" aria-expanded="false" aria-controls="beta-info-blurb">Read More</button>
+      </div>
+    </section>
+
+    <!-- Beta Reader CTA 2 -->
+    <div class="cta-container text-center mt-xl">
+      <a href="/contact" class="btn btn-primary btn-cta">Join the beta/ARC reader team and read for free</a>
     </div>
+
   </div>
 </Layout>
 
@@ -47,47 +279,265 @@ import Layout from '../layouts/Layout.astro';
   .books-intro {
     max-width: 800px;
     margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--color-primary);
   }
 
-  .books-grid {
+  .mt-xl { margin-top: 5rem; }
+  
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem; /* Slightly smaller for side-by-side */
+    color: var(--color-primary);
+    margin-bottom: 0.5rem; /* Reduced margin to keep subtitle close */
+  }
+
+  .series-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #666; /* Softer color for subtitle */
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  .series-subtitle a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+
+  .series-subtitle a:hover {
+    color: var(--color-accent);
+  }
+
+  /* Series Grid Wrapper */
+  .series-layout-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  @media (min-width: 992px) {
+    .series-layout-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+  }
+
+  /* Carousel Styles */
+  .carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0.5rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-accent) transparent;
+    display: block;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    width: max-content;
+    padding-bottom: 1rem;
+    margin: 0 auto; /* Center items */
   }
 
   .book-card {
+    flex: 0 0 auto;
+    width: 220px; /* Slightly smaller card for tight spaces */
+    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
 
+  .book-cover {
+    width: 180px;
+    height: auto;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+
+  .book-cover:hover {
+    transform: scale(1.05);
+  }
+
+  .book-cover.large {
+    width: 300px;
+  }
+
+  .book-card:hover .book-cover {
+    transform: scale(1.05);
+  }
+
   .book-cover-placeholder {
-    width: 200px;
-    height: 300px;
+    width: 180px; /* Reduced specific size */
+    height: 270px;
     background-color: var(--color-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    font-size: 1.1rem;
   }
 
-  .book-details h3 {
-    margin-bottom: 0.5rem;
+  /* Expandable Blurb Styles */
+  .series-blurb-container {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: left;
+    position: relative;
   }
 
-  .author {
-    color: #666;
-    font-style: italic;
+  .series-blurb-content {
+    max-height: 120px; /* Show only first few lines initially */
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.5s ease-in-out;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .series-blurb-container.expanded .series-blurb-content {
+    max-height: 3000px; /* Increased to allow full expansion of larger sections */
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .btn-read-more {
+    display: block;
+    margin: 1rem auto 0;
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .btn-read-more:hover {
+    color: var(--color-primary);
+  }
+
+  /* Standalone Styles */
+  .standalone-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    background-color: #f9f7f2;
+    padding: 3rem;
+    border-radius: 12px;
+  }
+
+    /* Wide Container Override */
+  .container-wide {
+    max-width: 1400px !important;
+    padding: 0 2rem; /* Slightly more padding on very large screens */
+  }
+
+  /* Media Query for larger screens */
+  @media (min-width: 768px) {
+    .standalone-grid {
+      grid-template-columns: auto 1fr; /* Image + Content */
+      gap: 4rem;
+      text-align: left;
+    }
+
+    .standalone-content {
+      display: block;
+      text-align: left;
+    }
+
+    .standalone-grid.reverse {
+      grid-template-columns: 1fr auto;
+    }
+
+    .standalone-grid.reverse .standalone-content {
+      order: 1;
+    }
+
+    .standalone-grid.reverse .book-cover {
+      order: 2;
+    }
+  }
+
+  /* CTA Button Styles */
+  .btn-cta {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background-color: var(--color-accent); /* Make it stand out */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+    background-color: color-mix(in srgb, var(--color-accent), black 10%);
+  }
+
+  .text-left { text-align: left; }
+  .text-accent { color: var(--color-accent); font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+  .font-bold { font-weight: bold; }
+  .bg-light { background-color: #fff; border: 1px solid var(--color-border); }
+  .rounded { border-radius: 8px; }
+  .p-md { padding: 1.5rem; }
+  .mt-md { margin-top: 1.5rem; }
+  
+  /* Ensure bullets are visible in the new section */
+  .series-blurb-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
     margin-bottom: 1rem;
   }
-
-  .description {
-    margin-bottom: 1.5rem;
-  }
 </style>
+
+<script>
+  // Simple toggle logic for Read More buttons
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.btn-read-more');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const btn = e.target as HTMLButtonElement;
+        const containerId = btn.getAttribute('aria-controls');
+        const container = document.getElementById(containerId!);
+
+        if (container) {
+          const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+          if (isExpanded) {
+            container.classList.remove('expanded');
+            btn.setAttribute('aria-expanded', 'false');
+            btn.textContent = 'Read More';
+          } else {
+            container.classList.add('expanded');
+            btn.setAttribute('aria-expanded', 'true');
+            btn.textContent = 'Read Less';
+          }
+        }
+      });
+    });
+  });
+</script>

@@ -8,12 +8,33 @@ import Layout from '../layouts/Layout.astro';
       <h1>Services</h1>
       <p class="subtitle">Tailored solutions for schools, organizations, and families.</p>
     </header>
+<div class="services-quicknav">
+  <h2 class="services-quicknav-title">Choose the service that fits your needs</h2>
+
+  <div class="services-quicknav-buttons">
+    <a class="service-btn" href="#consulting">IEP/504 Consulting</a>
+    <a class="service-btn" href="#notary">Mobile Notary Services</a>
+    <a class="service-btn" href="#advocacy">Advocacy & Speaking</a>
+    <a class="service-btn" href="#writing">Writing & Editorial</a>
+  </div>
+
+  <div class="services-quicknav-cta">
+    <a class="btn" href="/contact">Schedule Your Free Consult</a>
+  </div>
+</div>
 
     <div class="services-list">
-      <section class="service-item">
+      <section class="service-item" id="consulting">
         <div class="service-content">
           <h2>Educational Consulting</h2>
-          <p>I partner with schools and districts to audit and improve their special education programs. My approach focuses on creating inclusive environments where every student can thrive.</p>
+          <p class="service-kicker">For families, schools, and districts</p>
+
+
+          <p>
+I offer direct consulting services for families to help them build confidence and prepare for IEP and 504 meetings. I also partner with schools and districts to provide professional development and support improvements to special education programs. My approach focuses on creating inclusive environments where every student can thrive.
+</p>
+
+
           <ul class="feature-list">
             <li>Program Evaluation & Audits</li>
             <li>IEP Compliance & Best Practices</li>
@@ -22,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
           </ul>
         </div>
       </section>
-<section class="service-item">
+<section class="service-item" id="notary">
   <div class="service-content">
     <h2>Mobile Notary Services</h2>
     <p>
@@ -38,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
     </ul>
   </div>
 </section>
-      <section class="service-item">
+      <section class="service-item" id="advocacy">
         <div class="service-content">
           <h2>Advocacy & Speaking</h2>
           <p>Available for keynote speeches, panel discussions, and workshops on disability rights, accessibility, and educational equity.</p>
@@ -50,17 +71,21 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </section>
 
-      <section class="service-item">
-        <div class="service-content">
-          <h2>Writing & Editorial</h2>
-          <p>Professional writing services specializing in educational content, disability narratives, and children's literature.</p>
-          <ul class="feature-list">
-            <li>Content Strategy</li>
-            <li>Ghostwriting</li>
-            <li>Editorial Consulting</li>
-          </ul>
-        </div>
-      </section>
+     <section class="service-item" id="writing">
+  <div class="service-content">
+    <h2>Writing & Editorial</h2>
+    <p>
+      Professional writing services specializing in educational content,
+      disability narratives, and positive disability representation in fiction.
+    </p>
+    <ul class="feature-list">
+      <li>Content Strategy</li>
+      <li>Ghostwriting</li>
+      <li>Editorial Consulting</li>
+    </ul>
+  </div>
+</section>
+
       
 
     </div>
@@ -133,4 +158,150 @@ import Layout from '../layouts/Layout.astro';
   .cta-section h3 {
     margin-bottom: 1.5rem;
   }
+/* Quick-nav (top selector) */
+.services-quicknav {
+  max-width: 980px;
+  margin: 2.5rem auto 2.75rem;
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.55);
+  text-align: center;
+}
+
+
+.services-quicknav-title {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  line-height: 1.05;
+}
+
+
+.services-quicknav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-accent);
+  background: linear-gradient(
+    135deg,
+    rgba(235, 180, 90, 0.15),
+    rgba(235, 180, 90, 0.05)
+  );
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  line-height: 1;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.15s ease;
+}
+.service-btn:hover {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    #f0c26a
+  );
+  color: #2a2a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba(235, 180, 90, 0.25);
+}
+
+
+.service-btn:hover {
+  transform: translateY(-1px);
+  background: var(--color-secondary);
+  border-color: var(--color-accent);
+}
+
+.services-quicknav-cta {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+.services-quicknav-cta .btn {
+  display: inline-flex;
+  padding: 0.9rem 1.25rem;
+  font-weight: 800;
+  border-radius: 12px;
+}
+
+/* --- OVERRIDES (paste at bottom of <style>) --- */
+
+.service-item{
+  position: relative;
+  border-radius: 16px;
+  padding: 2.25rem;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+}
+
+.service-item::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  bottom:18px;
+  left:18px;
+  width:8px;
+  border-radius:999px;
+  background: var(--color-accent);
+  opacity: 0.95;
+}
+
+.service-content{
+  padding-left: 1.5rem;
+}
+
+.service-kicker{
+  margin: 0.25rem 0 0.5rem;
+  font-weight: 700;
+  color: #666;
+}
+
+.service-link{
+  display: inline-flex;
+  margin: 0 0 1.25rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.service-link:hover{
+  text-decoration: underline;
+}
+
+/* Kill the old dot bullets and force checkmarks */
+.feature-list li::before{
+  content:"✓" !important;
+  color: var(--color-accent) !important;
+  font-weight: 900 !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.feature-list li{
+  position: relative;
+  padding-left: 1.75rem;
+  line-height: 1.4;
+}
+
 </style>

@@ -4,68 +4,116 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="About">
   <div class="container mt-lg mb-lg">
-    <div class="about-grid">
-      <div class="about-image">
-        <!-- Placeholder for Erin's image -->
-        <div class="placeholder-img">Erin Hayden</div>
-      </div>
-      <div class="about-content">
-        <h1>About Erin Hayden</h1>
-        <p class="lead">Educator, Writer, Advocate, and Founder of Bravery Books.</p>
-        
-        <p>With over a decade of experience in education and a lifetime of personal advocacy, I am dedicated to creating spaces where everyone belongs. My work bridges the gap between policy and practice, ensuring that individuals with disabilities are not just accommodated, but celebrated.</p>
-        
-        <h2>My Journey</h2>
-        <p>My path began in the classroom, where I saw firsthand the challenges students with diverse needs face. This inspired me to pursue further expertise in special education and eventually launch my consulting practice. I believe that education is the most powerful tool for social change.</p>
-        
-        <h2>Advocacy & Writing</h2>
-        <p>Through my writing and speaking engagements, I aim to shed light on the nuances of disability rights. Whether it's op-eds, blog posts, or my upcoming book projects, my goal is to foster empathy and understanding.</p>
-      </div>
+    <div class="about-hero mb-lg">
+      <h1 class="page-title">Who is Erin Hayden?</h1>
+      <img src="/images/erin-presenting.jpg" alt="Erin Hayden presenting to a group in a classroom setting" class="banner-img" />
+    </div>
+
+    <div class="about-content-wrapper">
+      <p class="lead">Educator, Writer, Advocate, and Mobile Notary</p>
+      <p class="lead-sub">Founder of Bravery Books</p>
+
+      <p>I’ve spent more than twenty years teaching, raising kids, and working alongside families through life’s many transitions. I was even a childbirth educator and labor doula once upon a time. But that’s a story for another day.</p>
+
+      <p>Some of my experience comes from classrooms and leadership roles. Some of it comes from my own kitchen table.</p>
+
+      <p>I am the parent of a child with multiple chronic medical conditions, and I’ve participated in both IEP and 504 planning as an educator and as a parent. I’ve taught and raised children while navigating special education and medical systems in five different states. That experience has given me a wide-angle view of what works, what doesn’t, and where collaboration often gets stuck.</p>
+
+      <p>This blend of professional training and lived experience helps me recognize strong systems when they’re in place—and find practical, creative solutions when they fall short.</p>
+
+      <p class="emphasis">At the heart of everything I do is a simple belief: people deserve to feel supported, respected, and understood, especially when systems feel overwhelming.</p>
+
+      <h2>My Story</h2>
+      <p>My work began in classrooms, where I taught students from preschool through college. Over time, I stepped into leadership roles, including serving as the head of a Special Education department. I later earned my PhD in Literacy Education to deepen my understanding of how learning, language, and access shape student experiences.</p>
+
+      <p>Today, I teach in the School of Education at Purdue University Fort Wayne, where I focus on literacy, community building, research, and preparing future educators for real classrooms with real students and real challenges.</p>
+
+      <p>My work has always extended beyond schools. As a parent, advocate, and professional, I’ve spent years supporting people during moments that carry a lot of weight—education planning, medical decisions, legal paperwork, and major life changes. That path eventually led me to become a commissioned mobile notary.</p>
+
+      <p>Notary work may look different from teaching or advocacy, but it comes from the same place. Many documents that require notarization are tied to stressful or time-sensitive situations. I approach that work with care, discretion, and attention to detail, knowing that for the person sitting across from me, the paperwork often represents something much bigger.</p>
+
+      <p>Across all of my roles, the goal remains the same: to help people move forward with clarity and confidence.</p>
+
+      <h2>Bravery Books & Advocacy Through Writing</h2>
+      <p>Bravery Books grew out of my belief that stories matter. They shape how we see ourselves, how we see others, and how we imagine what’s possible.</p>
+
+      <p>Through both fiction and nonfiction, my writing centers inclusion, disability representation, and the power of community. I write stories that reflect real kids and real families—messy, resilient, thoughtful, and brave. Whether I’m writing for young readers, teens, or adults, my goal is to create books that help readers feel seen and understood.</p>
+
+      <p>Writing is also one of my favorite ways to advocate. Stories open doors that policy language can’t. They invite empathy, spark conversation, and help people connect across difference.</p>
+
+      <p>In addition to writing, I’m available for school visits, classroom talks, and community events. I love working with students to foster a genuine love of reading and writing and to help them see themselves as storytellers. Visits can be tailored for different ages and focus areas, including literacy, storytelling, inclusion, and building strong classroom communities.</p>
+
+      <p>If you’re interested in author visits, speaking engagements, or learning more about my work, I’d love to connect.</p>
     </div>
   </div>
 </Layout>
 
 <style>
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .placeholder-img {
-    width: 100%;
-    height: 400px;
-    background-color: var(--color-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-primary);
-    font-weight: bold;
-    font-size: 1.5rem;
-    border-radius: 8px;
+  /* Content Styles */
+  .about-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
   }
 
   .lead {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .lead-sub {
     font-size: 1.25rem;
     color: var(--color-accent);
     font-weight: 500;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  p {
     margin-bottom: 2rem;
+    color: var(--color-text);
+  }
+
+  .emphasis {
+    font-weight: 500;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    border-left: 4px solid var(--color-accent);
+    padding-left: 1.5rem;
+    margin: 3rem 0;
   }
 
   h2 {
-    margin-top: 2rem;
-    font-size: 1.8rem;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--color-secondary);
+  }
+
+  /* Banner Styles */
+  .page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   @media (max-width: 768px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    .placeholder-img {
-      height: 300px;
+    .page-title {
+      font-size: 2.5rem;
     }
   }
 </style>
