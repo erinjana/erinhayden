@@ -132,6 +132,7 @@ const { pathname } = Astro.url;
       opacity: 0;
       visibility: hidden;
       transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+      gap: 0; /* Remove flex gap on mobile */
     }
 
     /* Expanded state */
@@ -139,19 +140,19 @@ const { pathname } = Astro.url;
       max-height: 400px; /* Enough for menu items */
       opacity: 1;
       visibility: visible;
-      padding: 1.5rem 0; /* Add padding when open */
+      padding: 0.5rem 0; /* Reduced padding */
       border-top: 1px solid var(--color-border);
     }
 
     .nav-list li {
       width: 100%;
       text-align: center;
-      padding: 0.5rem 0;
+      padding: 0; /* Remove extra padding on li */
     }
     
     .nav-list a {
         display: block;
-        padding: 0.5rem;
+        padding: 0.6rem 0; /* Comfortable touch target but condensed */
         font-size: 1.1rem;
     }
   }
