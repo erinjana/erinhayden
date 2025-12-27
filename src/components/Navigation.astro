@@ -12,7 +12,10 @@ const { pathname } = Astro.url;
 ---
 
 <nav class="nav">
-  <ul class="nav-list">
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span class="hamburger"></span>
+  </button>
+  <ul class="nav-list" id="nav-list">
     {links.map((link) => (
       <li>
         <a href={link.href} class={pathname === link.href ? 'active' : ''}>
@@ -24,6 +27,57 @@ const { pathname } = Astro.url;
 </nav>
 
 <style>
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+  }
+
+  .hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease, top 0.3s ease;
+  }
+
+  .hamburger::before { top: -8px; }
+  .hamburger::after { top: 8px; }
+
+  /* Active state for hamburger (X shape) */
+  .nav-toggle.expanded .hamburger {
+    background-color: transparent;
+  }
+
+  .nav-toggle.expanded .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .nav-toggle.expanded .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
   .nav-list {
     display: flex;
     list-style: none;
@@ -37,6 +91,8 @@ const { pathname } = Astro.url;
     color: var(--color-text);
     font-size: 1rem;
     position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
   }
 
   .nav-list a:hover,
@@ -55,27 +111,65 @@ const { pathname } = Astro.url;
   }
 
   @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+
     .nav-list {
-      display: none; /* Mobile menu to be implemented if needed, for now simple hide on small screens or stack */
+      display: flex;
       flex-direction: column;
       position: absolute;
-      top: var(--header-height);
+      top: 100%;
       left: 0;
       width: 100%;
-      background: var(--color-bg);
-      padding: 1rem;
+      background: var(--color-bg); /* Use theme bg */
+      padding: 1rem 0;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      
+      /* Hidden by default */
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s;
+    }
+
+    /* Expanded state */
+    .nav-list.expanded {
+      max-height: 400px; /* Enough for menu items */
+      opacity: 1;
+      visibility: visible;
+      padding: 1.5rem 0; /* Add padding when open */
+      border-top: 1px solid var(--color-border);
+    }
+
+    .nav-list li {
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem 0;
     }
     
-    /* Simple mobile fallback for now: just stack them if we don't have a toggle */
-    /* Actually, let's keep it simple and just wrap for now or scroll */
-    .nav-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        position: static;
-        box-shadow: none;
+    .nav-list a {
+        display: block;
+        padding: 0.5rem;
+        font-size: 1.1rem;
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+
+    if (toggle && navList) {
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        toggle.classList.toggle('expanded');
+        navList.classList.toggle('expanded');
+      });
+    }
+  });
+</script>
