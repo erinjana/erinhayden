@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/*"
-  to = "https://erinhayden.com/bravery-books/"
+  to = "https://erinhayden.com/bravery-books/:splat"
   status = 301
   force = true
   conditions = {Host = ["braverybooks.com", "www.braverybooks.com"]}
