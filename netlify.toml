@@ -1,6 +1,23 @@
 [[redirects]]
-  from = "/*"
-  to = "https://erinhayden.com/bravery-books/:splat"
+  from = "http://braverybooks.com/*"
+  to = "https://erinhayden.com/bravery-books"
   status = 301
   force = true
-  conditions = {Host = ["braverybooks.com", "www.braverybooks.com"]}
+
+[[redirects]]
+  from = "https://braverybooks.com/*"
+  to = "https://erinhayden.com/bravery-books"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.braverybooks.com/*"
+  to = "https://erinhayden.com/bravery-books"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.braverybooks.com/*"
+  to = "https://erinhayden.com/bravery-books"
+  status = 301
+  force = true
