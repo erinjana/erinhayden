@@ -1,93 +1,184 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Services">
   <div class="container mt-lg mb-lg">
+    <!-- New Page Header -->
     <header class="page-header text-center">
-      <h1>Services</h1>
-      <p class="subtitle">Tailored solutions for schools, organizations, and families.</p>
+      <h1>Start where you are. Here’s how I can support you.</h1>
+      <p class="subtitle">
+        Some needs are about school. Some are about everyday life. Some are
+        about paperwork that just needs to get done. You don’t have to sort it
+        all out before you begin.
+      </p>
     </header>
-<div class="services-quicknav">
-  <h2 class="services-quicknav-title">Choose the service that fits your needs</h2>
 
-  <div class="services-quicknav-buttons">
-    <a class="service-btn" href="#consulting">IEP/504 Consulting</a>
-    <a class="service-btn" href="#notary">Mobile Notary Services</a>
-    <a class="service-btn" href="#advocacy">Advocacy & Speaking</a>
-    <a class="service-btn" href="#writing">Writing & Editorial</a>
-  </div>
+    <!-- Updated Quick Nav (Optional helper) -->
+    <div class="services-quicknav">
+      <h2 class="services-quicknav-title">
+        Not sure where your situation fits?
+      </h2>
+      <p style="margin-bottom: 2rem; color: #666;">
+        Start with Real-Life Disability Advocacy.
+      </p>
 
-  <div class="services-quicknav-cta">
-    <a class="btn" href="/contact">Schedule Your Free Consult</a>
-  </div>
-</div>
+      <div class="services-quicknav-buttons">
+        <a class="service-btn" href="#reallife">Real-Life Advocacy</a>
+        <a class="service-btn" href="#school">IEP & 504 Support</a>
+        <a class="service-btn" href="#speaking">Advocacy & Speaking</a>
+        <a class="service-btn" href="#notary">Mobile Notary</a>
+        <a class="service-btn" href="#writing">Writing</a>
+      </div>
+    </div>
 
     <div class="services-list">
-      <section class="service-item" id="consulting">
+      <!-- Service 1: Real-Life Disability Advocacy (NEW PRIMARY) -->
+      <section class="service-item" id="reallife">
         <div class="service-content">
-          <h2>Educational Consulting</h2>
-          <p class="service-kicker">For families, schools, and districts</p>
-
+          <h2>Real-Life Disability Advocacy (1:1 Support)</h2>
 
           <p>
-I offer direct consulting services for families to help them build confidence and prepare for IEP and 504 meetings. I also partner with schools and districts to provide professional development and support improvements to special education programs. My approach focuses on creating inclusive environments where every student can thrive.
-</p>
-
+            Some challenges don’t fit neatly into a meeting agenda or a form.
+            Families often need support thinking through real-world
+            situations—like planning travel, communicating with insurance
+            companies, coordinating services, or making decisions that affect
+            daily life. I offer time-limited, one-to-one advocacy support to
+            help families sort through options, clarify next steps, and create
+            supports that actually work in practice.
+          </p>
 
           <ul class="feature-list">
-            <li>Program Evaluation & Audits</li>
-            <li>IEP Compliance & Best Practices</li>
-            <li>Professional Development for Staff</li>
-            <li>Inclusive Curriculum Design</li>
+            <li>Planning accessible travel, camps, or transitions</li>
+            <li>Preparing for insurance conversations or appeals</li>
+            <li>
+              Coordinating supports across school, healthcare, and daily life
+            </li>
+            <li>Talking through complex decisions when everything overlaps</li>
           </ul>
+
+          <div class="mt-md">
+            <a href="/contact" class="btn">Talk Through a Real-Life Challenge</a
+            >
+          </div>
         </div>
       </section>
-<section class="service-item" id="notary">
-  <div class="service-content">
-    <h2>Mobile Notary Services</h2>
-    <p>
-      When important paperwork needs to be signed, it can come with stress, time pressure, and a lot of logistics.
-      I provide mobile notary services across Indiana, meeting clients where they are so the process feels simple,
-      respectful, and accessible.
-    </p>
-    <ul class="feature-list">
-      <li>Mobile notarization at home, work, or public meeting locations</li>
-      <li>Loan signings & closing paperwork (Licensed Title Agent)</li>
-      <li>Hospital, nursing facility, and bed-bound notarizations</li>
-      <li>Education-related documents notarized in home, workplace, or school settings</li>
-    </ul>
-  </div>
-</section>
-      <section class="service-item" id="advocacy">
+
+      <!-- Service 2: IEP & 504 Support (Renamed) -->
+      <section class="service-item" id="school">
+        <div class="service-content">
+          <h2>IEP & 504 Support (School-Based Advocacy)</h2>
+
+          <p>
+            For families who want focused support around school planning, I
+            offer guidance to help parents prepare for IEP and 504 meetings,
+            understand documentation, and think through how school-based
+            supports translate into daily life.
+          </p>
+
+          <ul class="feature-list">
+            <li>Meeting preparation & document review</li>
+            <li>Understanding goals, accommodations, and services</li>
+            <li>Connecting school supports to real-life needs</li>
+          </ul>
+
+          <div class="mt-md">
+            <a href="/contact" class="btn">Get IEP & 504 Support</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service 3: Advocacy & Speaking (Reframed) -->
+      <section class="service-item" id="speaking">
         <div class="service-content">
           <h2>Advocacy & Speaking</h2>
-          <p>Available for keynote speeches, panel discussions, and workshops on disability rights, accessibility, and educational equity.</p>
+
+          <p>
+            I offer talks, workshops, and facilitated conversations for parents,
+            disability communities, schools, and organizations who want clearer,
+            more compassionate approaches to disability advocacy. Whether I’m
+            speaking to a parent group, a school community, or a professional
+            audience, my focus is always on real-life understanding—helping
+            people make sense of systems and create supports that work in
+            practice.
+          </p>
+          <p
+            style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 0.5rem;"
+          >
+            Available for parent groups, disability organizations, schools,
+            conferences, and community events.
+          </p>
+
           <ul class="feature-list">
-            <li>Keynote Speaking</li>
-            <li>Parent Advocacy Workshops</li>
-            <li>Corporate Accessibility Training</li>
+            <li>Parent & Caregiver Advocacy Workshops</li>
+            <li>Disability Community Talks & Panels</li>
+            <li>School & Educator Presentations</li>
+            <li>Organizational Accessibility & Inclusion Training</li>
           </ul>
+
+          <div class="mt-md">
+            <a href="/contact" class="btn">Invite Me to Speak</a>
+          </div>
         </div>
       </section>
 
-     <section class="service-item" id="writing">
-  <div class="service-content">
-    <h2>Writing & Editorial</h2>
-    <p>
-      Professional writing services specializing in educational content,
-      disability narratives, and positive disability representation in fiction.
-    </p>
-    <ul class="feature-list">
-      <li>Content Strategy</li>
-      <li>Ghostwriting</li>
-      <li>Editorial Consulting</li>
-    </ul>
-  </div>
-</section>
+      <!-- Service 4: Mobile Notary (Separated) -->
+      <section class="service-item" id="notary">
+        <div class="service-content">
+          <h2>Mobile Notary Services</h2>
+          <p
+            class="service-kicker"
+            style="color: var(--color-accent); font-style: italic;"
+          >
+            This service is separate from advocacy and educational support.
+          </p>
 
-      
+          <p>
+            When important paperwork needs to be signed, it can come with
+            stress, time pressure, and logistics. I provide mobile notary
+            services across Indiana, meeting clients where they are so the
+            process feels simple, respectful, and accessible.
+          </p>
 
+          <ul class="feature-list">
+            <li>
+              Mobile notarization at home, work, or public meeting locations
+            </li>
+            <li>Loan signings & closing paperwork (Licensed Title Agent)</li>
+            <li>Hospital, nursing facility, and bed-bound notarizations</li>
+            <li>
+              Education-related documents notarized in home, workplace, or
+              school settings
+            </li>
+          </ul>
+
+          <div class="mt-md">
+            <a href="/contact" class="btn">Schedule Notary Services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service 5: Writing & Editorial -->
+      <section class="service-item" id="writing">
+        <div class="service-content">
+          <h2>Writing & Editorial</h2>
+
+          <p>
+            Professional writing services specializing in educational content,
+            disability narratives, and thoughtful disability representation.
+          </p>
+
+          <ul class="feature-list">
+            <li>Content Strategy</li>
+            <li>Ghostwriting</li>
+            <li>Editorial Consulting</li>
+          </ul>
+
+          <div class="mt-md">
+            <a href="/contact" class="btn">Inquire About Writing Projects</a>
+          </div>
+        </div>
+      </section>
     </div>
 
     <div class="cta-section text-center mt-lg">
@@ -142,7 +233,7 @@ I offer direct consulting services for families to help them build confidence an
   }
 
   .feature-list li::before {
-    content: '•';
+    content: "•";
     color: var(--color-accent);
     font-weight: bold;
     position: absolute;
@@ -158,150 +249,140 @@ I offer direct consulting services for families to help them build confidence an
   .cta-section h3 {
     margin-bottom: 1.5rem;
   }
-/* Quick-nav (top selector) */
-.services-quicknav {
-  max-width: 980px;
-  margin: 2.5rem auto 2.75rem;
-  padding: 2.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  background: rgba(255,255,255,0.55);
-  text-align: center;
-}
+  /* Quick-nav (top selector) */
+  .services-quicknav {
+    max-width: 980px;
+    margin: 2.5rem auto 2.75rem;
+    padding: 2.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.55);
+    text-align: center;
+  }
 
+  .services-quicknav-title {
+    margin: 0 0 1.25rem;
+    font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    line-height: 1.05;
+  }
 
-.services-quicknav-title {
-  margin: 0 0 1.25rem;
-  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
-  font-weight: 900;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  line-height: 1.05;
-}
+  .services-quicknav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
 
+  .service-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    border: 2px solid var(--color-accent);
+    background: linear-gradient(
+      135deg,
+      rgba(235, 180, 90, 0.15),
+      rgba(235, 180, 90, 0.05)
+    );
+    color: var(--color-primary);
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.15s ease;
+  }
+  .service-btn:hover {
+    background: linear-gradient(135deg, var(--color-accent), #f0c26a);
+    color: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 4px rgba(235, 180, 90, 0.25);
+  }
 
-.services-quicknav-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.25rem;
-}
+  .service-btn:hover {
+    transform: translateY(-1px);
+    background: var(--color-secondary);
+    border-color: var(--color-accent);
+  }
 
+  .services-quicknav-cta {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+  }
 
-.service-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 1.5rem;
-  border-radius: 999px;
-  border: 2px solid var(--color-accent);
-  background: linear-gradient(
-    135deg,
-    rgba(235, 180, 90, 0.15),
-    rgba(235, 180, 90, 0.05)
-  );
-  color: var(--color-primary);
-  font-weight: 800;
-  font-size: 1.15rem;
-  text-decoration: none;
-  line-height: 1;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.15s ease;
-}
-.service-btn:hover {
-  background: linear-gradient(
-    135deg,
-    var(--color-accent),
-    #f0c26a
-  );
-  color: #2a2a2a;
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 4px rgba(235, 180, 90, 0.25);
-}
+  .services-quicknav-cta .btn {
+    display: inline-flex;
+    padding: 0.9rem 1.25rem;
+    font-weight: 800;
+    border-radius: 12px;
+  }
 
+  /* --- OVERRIDES (paste at bottom of <style>) --- */
 
-.service-btn:hover {
-  transform: translateY(-1px);
-  background: var(--color-secondary);
-  border-color: var(--color-accent);
-}
+  .service-item {
+    position: relative;
+    border-radius: 16px;
+    padding: 2.25rem;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+  }
 
-.services-quicknav-cta {
-  margin-top: 0.75rem;
-  display: flex;
-  justify-content: center;
-}
+  .service-item::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    left: 18px;
+    width: 8px;
+    border-radius: 999px;
+    background: var(--color-accent);
+    opacity: 0.95;
+  }
 
+  .service-content {
+    padding-left: 1.5rem;
+  }
 
-.services-quicknav-cta .btn {
-  display: inline-flex;
-  padding: 0.9rem 1.25rem;
-  font-weight: 800;
-  border-radius: 12px;
-}
+  .service-kicker {
+    margin: 0.25rem 0 0.5rem;
+    font-weight: 700;
+    color: #666;
+  }
 
-/* --- OVERRIDES (paste at bottom of <style>) --- */
+  .service-link {
+    display: inline-flex;
+    margin: 0 0 1.25rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
 
-.service-item{
-  position: relative;
-  border-radius: 16px;
-  padding: 2.25rem;
-  background: rgba(255,255,255,0.85);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.05);
-}
+  .service-link:hover {
+    text-decoration: underline;
+  }
 
-.service-item::before{
-  content:"";
-  position:absolute;
-  top:18px;
-  bottom:18px;
-  left:18px;
-  width:8px;
-  border-radius:999px;
-  background: var(--color-accent);
-  opacity: 0.95;
-}
+  /* Kill the old dot bullets and force checkmarks */
+  .feature-list li::before {
+    content: "✓" !important;
+    color: var(--color-accent) !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+  }
 
-.service-content{
-  padding-left: 1.5rem;
-}
-
-.service-kicker{
-  margin: 0.25rem 0 0.5rem;
-  font-weight: 700;
-  color: #666;
-}
-
-.service-link{
-  display: inline-flex;
-  margin: 0 0 1.25rem;
-  font-weight: 800;
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.service-link:hover{
-  text-decoration: underline;
-}
-
-/* Kill the old dot bullets and force checkmarks */
-.feature-list li::before{
-  content:"✓" !important;
-  color: var(--color-accent) !important;
-  font-weight: 900 !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-}
-
-.feature-list li{
-  position: relative;
-  padding-left: 1.75rem;
-  line-height: 1.4;
-}
-
+  .feature-list li {
+    position: relative;
+    padding-left: 1.75rem;
+    line-height: 1.4;
+  }
 </style>
