@@ -12,7 +12,7 @@ const { pathname } = Astro.url;
 
 // Check if we are on Home, About, or Services pages (ignoring trailing slashes)
 const cleanPath = pathname.replace(/\/$/, "") || "/";
-const showMailerLite = ["/", "/about", "/services"].includes(cleanPath);
+const showMailerLite = ["/", "/about", "/services", "/speaking"].includes(cleanPath);
 ---
 
 <!doctype html>
