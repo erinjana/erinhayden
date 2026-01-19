@@ -1,0 +1,268 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Podcasts & Presentations">
+    <div class="container mt-lg mb-lg">
+        <div class="text-center mb-lg">
+            <h1 class="page-title">Podcasts & Presentations</h1>
+            <p class="lead">
+                Sharing stories, research, and advocacy strategies to build
+                clearer, more compassionate communities.
+            </p>
+        </div>
+
+        <section class="mb-xl">
+            <h2 class="section-title text-center mb-lg">Podcast Appearances</h2>
+            <div class="grid-2">
+                <div class="podcast-card">
+                    <a
+                        href="https://podcasts.apple.com/us/podcast/ep-84-breastfeeding-t1d-babies-w-erin-hayden-baldauf/id1576255557?i=1000673962800"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="/images/katie-ibclc.jpg"
+                            alt="Katie The Traveling IBCLC Podcast Episode 84"
+                            class="podcast-img"
+                        />
+                    </a>
+                    <h3 class="podcast-title">Katie the Traveling IBCLC</h3>
+                    <p class="podcast-episode">
+                        Ep 84: Breastfeeding T1D Babies
+                    </p>
+                    <a
+                        href="https://podcasts.apple.com/us/podcast/ep-84-breastfeeding-t1d-babies-w-erin-hayden-baldauf/id1576255557?i=1000673962800"
+                        class="link-underlined"
+                        target="_blank"
+                        rel="noopener noreferrer">Listen Now</a
+                    >
+                </div>
+
+                <div class="podcast-card">
+                    <a
+                        href="https://reclaimyourrise.riselyhealth.com/1944039/episodes/13572847-81-making-mistakes-as-a-t1d-parent-diabetes-camp-for-kids-and-taking-the-burden-off-your-child-with-erin-hayden-baldauf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img
+                            src="/images/reclaim-your-rise.jpg"
+                            alt="Reclaim Your Rise Podcast Episode 81"
+                            class="podcast-img"
+                        />
+                    </a>
+                    <h3 class="podcast-title">Reclaim Your Rise</h3>
+                    <p class="podcast-episode">
+                        Ep 81: Making Mistakes as a T1D Parent
+                    </p>
+                    <a
+                        href="https://reclaimyourrise.riselyhealth.com/1944039/episodes/13572847-81-making-mistakes-as-a-t1d-parent-diabetes-camp-for-kids-and-taking-the-burden-off-your-child-with-erin-hayden-baldauf"
+                        class="link-underlined"
+                        target="_blank"
+                        rel="noopener noreferrer">Listen Now</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title text-center mb-lg">
+                Conference Presentations
+            </h2>
+            <div class="conference-list">
+                <div class="conference-item">
+                    <h3>
+                        Desire Based Frameworks for Navigating Inclusion:
+                        Reconceptualizing Disability Advocacy Through Family
+                        Lore
+                    </h3>
+                    <p class="conference-meta">
+                        Bergamo Conference on Curriculum Theory and Classroom
+                        Practice | Dayton, OH | October 2025
+                    </p>
+                    <p>
+                        Presented with Dr. Kelly Vaughan. A presentation
+                        exploring how family stories shape our understanding of
+                        disability and advocacy.
+                    </p>
+                    <a
+                        href="https://www.jctonline.org/wp-content/uploads/2025/10/Bergamo-2025-FINAL-PROGRAM.pdf"
+                        class="btn-sm btn-outline"
+                        target="_blank"
+                        rel="noopener noreferrer">View Program PDF</a
+                    >
+                </div>
+
+                <div class="conference-item">
+                    <h3>
+                        Addressing the Needs of Marginalized Youth Through a
+                        Commitment to Multi-Tiered Systems of Support
+                    </h3>
+                    <p class="conference-meta">
+                        IAFOR International Conference on Education | Hawaii |
+                        January 2022
+                    </p>
+                    <p>
+                        Workshop presentation and Session Chair. Focused on
+                        practical frameworks for supporting students at the
+                        margins of school systems.
+                    </p>
+                </div>
+
+                <div class="conference-item">
+                    <h3>At the Crossroads of Studenthood and Motherhood</h3>
+                    <p class="conference-meta">
+                        Hawaii International Conference on Education | January
+                        2019
+                    </p>
+                    <p>
+                        A workshop exploring the intersecting identities of
+                        parenting and pursuing higher education.
+                    </p>
+                </div>
+
+                <div class="conference-item">
+                    <h3>At the Crossroads of Studenthood and Motherhood</h3>
+                    <p class="conference-meta">
+                        Northwest Teaching for Social Justice Conference |
+                        October 2018
+                    </p>
+                    <p>
+                        Presented at the annual gathering of educators dedicated
+                        to social justice in the classroom.
+                    </p>
+                    <a
+                        href="https://nwtsj.org/wp/"
+                        class="link-underlined"
+                        target="_blank"
+                        rel="noopener noreferrer">Conference Website</a
+                    >
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+
+<style>
+    .page-title {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--color-text);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        color: var(--color-primary);
+        position: relative;
+        display: inline-block;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .podcast-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+    }
+
+    .podcast-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .podcast-img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .podcast-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-primary);
+    }
+
+    .podcast-episode {
+        font-size: 0.95rem;
+        color: #666;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .conference-list {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .conference-item {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        border-left: 4px solid var(--color-secondary);
+    }
+
+    .conference-item h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+
+    .conference-meta {
+        font-family: var(--font-heading);
+        color: var(--color-accent);
+        font-style: italic;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-sm {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        text-decoration: none;
+        margin-top: 0.5rem;
+    }
+
+    .link-underlined {
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    /* Utilities override */
+    .mb-xl {
+        margin-bottom: 4rem;
+    }
+    .text-center {
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
