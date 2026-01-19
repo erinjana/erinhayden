@@ -116,15 +116,16 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="featured-services container mt-xl">
-    <div class="text-center mb-lg">
-      <button class="btn ml-onclick-form" onclick="ml('show', 'PU4rTz', true)"
-        >Schedule Your Free Consult</button
+  <section class="featured-services container mt-lg">
+    <div class="text-center mb-md">
+      <button
+        class="btn btn-large ml-onclick-form"
+        onclick="ml('show', 'PU4rTz', true)">Schedule Your Free Consult</button
       >
     </div>
 
-    <div class="text-center mb-lg">
-      <h2>How I Can Help</h2>
+    <div class="text-center mb-md">
+      <h2 class="section-title-large">How I Can Help</h2>
     </div>
     <div class="grid-3">
       <div class="service-preview">
@@ -467,6 +468,44 @@ import Layout from "../layouts/Layout.astro";
 
     .cards-grid {
       gap: 3rem;
+    }
+  }
+
+  /* Refined Sizing & Spacing */
+  .mt-lg {
+    margin-top: 2rem;
+  }
+  .mb-md {
+    margin-bottom: 2rem;
+  }
+
+  .btn-large {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    letter-spacing: 0.02em;
+    font-weight: 700;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  .btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.15);
+  }
+
+  .section-title-large {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-title-large {
+      font-size: 2.25rem;
+    }
+    .btn-large {
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
     }
   }
 </style>
