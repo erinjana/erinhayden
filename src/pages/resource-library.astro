@@ -6,23 +6,19 @@ import Parser from 'rss-parser';
 // DESCRIPTION: A library of resources including videos, files, and courses.
 
 let videos = [];
-const PLAYLIST_ID = 'PL_PLACEHOLDER_ID'; // <--- PASTE YOUR YOUTUBE PLAYLIST ID HERE
+const PLAYLIST_ID = 'PL_WIBP_Tkp9-_VjUESvmwaTtaT0xEINcZ'; 
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
 
 try {
   const parser = new Parser();
-  if (PLAYLIST_ID !== 'PL_PLACEHOLDER_ID') {
-      const feed = await parser.parseURL(FEED_URL);
-      videos = feed.items.map(item => ({
-        title: item.title,
-        link: item.link,
-        pubDate: item.pubDate,
-        thumbnail: `https://i.ytimg.com/vi/${item.id.replace('yt:video:', '')}/hqdefault.jpg`,
-        id: item.id.replace('yt:video:', '')
-      }));
-  } else {
-      console.log('Using placeholder playlist ID. Videos will not load until a valid ID is provided.');
-  }
+  const feed = await parser.parseURL(FEED_URL);
+  videos = feed.items.map(item => ({
+    title: item.title,
+    link: item.link,
+    pubDate: item.pubDate,
+    thumbnail: `https://i.ytimg.com/vi/${item.id.replace('yt:video:', '')}/hqdefault.jpg`,
+    id: item.id.replace('yt:video:', '')
+  }));
 } catch (error) {
   console.error('Error fetching YouTube feed:', error);
 }
@@ -57,9 +53,7 @@ try {
         ) : (
           <div class="empty-state">
             <p>
-                {PLAYLIST_ID === 'PL_PLACEHOLDER_ID' 
-                    ? "Video feed is currently configured with a placeholder. Please update the Playlist ID in the code."
-                    : "No videos found or unable to load the feed."}
+                No videos found or unable to load the feed.
             </p>
             <!-- Fallback/Example link provided by user -->
             <p>
