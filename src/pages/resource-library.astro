@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Parser from 'rss-parser';
+
+// TITLE: Resource Library
+// DESCRIPTION: A library of resources including videos, files, and courses.
+
+let videos = [];
+const PLAYLIST_ID = 'PL_PLACEHOLDER_ID'; // <--- PASTE YOUR YOUTUBE PLAYLIST ID HERE
+const FEED_URL = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
+
+try {
+  const parser = new Parser();
+  if (PLAYLIST_ID !== 'PL_PLACEHOLDER_ID') {
+      const feed = await parser.parseURL(FEED_URL);
+      videos = feed.items.map(item => ({
+        title: item.title,
+        link: item.link,
+        pubDate: item.pubDate,
+        thumbnail: `https://i.ytimg.com/vi/${item.id.replace('yt:video:', '')}/hqdefault.jpg`,
+        id: item.id.replace('yt:video:', '')
+      }));
+  } else {
+      console.log('Using placeholder playlist ID. Videos will not load until a valid ID is provided.');
+  }
+} catch (error) {
+  console.error('Error fetching YouTube feed:', error);
+}
+
+---
+
+<Layout title="Resource Library">
+  <div class="container section">
+    <h1 class="text-center">Resource Library</h1>
+    <p class="intro text-center">
+      Explore our collection of resources designed to support you.
+    </p>
+
+    <!-- Video Resources Section -->
+    <div class="resource-section">
+      <h2 class="section-title">Video Resources</h2>
+      <div class="playlist-block">
+        <h3 class="playlist-title">Supporting Students With Disabilities: Understanding the Basics</h3>
+        
+        {videos.length > 0 ? (
+          <div class="video-grid">
+            {videos.map((video) => (
+              <a href={video.link} target="_blank" rel="noopener noreferrer" class="video-card">
+                <div class="thumbnail-container">
+                  <img src={video.thumbnail} alt={video.title} loading="lazy" />
+                  <div class="play-icon">▶</div>
+                </div>
+                <h4 class="video-title">{video.title}</h4>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="empty-state">
+            <p>
+                {PLAYLIST_ID === 'PL_PLACEHOLDER_ID' 
+                    ? "Video feed is currently configured with a placeholder. Please update the Playlist ID in the code."
+                    : "No videos found or unable to load the feed."}
+            </p>
+            <!-- Fallback/Example link provided by user -->
+            <p>
+                In the meantime, check out our latest video: <br/>
+                <a href="https://youtu.be/K51tG-Eu84I" target="_blank">Supporting Students With Disabilities (Watch on YouTube)</a>
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Downloadable Files Section -->
+    <div class="resource-section">
+      <h2 class="section-title">Downloadable Files</h2>
+      <div class="coming-soon">
+        <p>Helpful guides and checklists are on their way. check back soon!</p>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Online Courses Section -->
+    <div class="resource-section">
+      <h2 class="section-title">Online Courses</h2>
+      <div class="coming-soon">
+        <p>In-depth courses to empower your advocacy journey are currently in development.</p>
+      </div>
+    </div>
+
+  </div>
+</Layout>
+
+<style>
+  .section {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .intro {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resource-section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: var(--spacing-sm);
+    display: inline-block;
+  }
+
+  .playlist-block {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .playlist-title {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .video-card {
+    display: block;
+    text-decoration: none;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  }
+
+  .thumbnail-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background: #000;
+  }
+
+  .thumbnail-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  .video-card:hover .thumbnail-container img {
+    opacity: 1;
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    opacity: 0.8;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+
+  .video-title {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .empty-state, .coming-soon {
+    background-color: var(--color-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    color: var(--color-email-text, #555); /* Fallback */
+    opacity: 0.8;
+  }
+
+  .divider {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: var(--spacing-xl) 0;
+  }
+</style>
