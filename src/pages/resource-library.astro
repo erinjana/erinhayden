@@ -1,68 +1,143 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Parser from 'rss-parser';
+import Layout from "../layouts/Layout.astro";
+import Parser from "rss-parser";
 
 // TITLE: Resource Library
 // DESCRIPTION: A library of resources including videos, files, and courses.
 
-let videos: any[] = [];
-const PLAYLIST_ID = 'PL_WIBP_Tkp9-_VjUESvmwaTtaT0xEINcZ'; 
-const FEED_URL = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
+let videosSupport: any[] = [];
+let videosMindfulness: any[] = [];
 
-try {
-  const parser = new Parser();
-  const feed = await parser.parseURL(FEED_URL);
-  videos = feed.items.map(item => ({
-    title: item.title,
-    link: item.link,
-    pubDate: item.pubDate,
-    thumbnail: `https://i.ytimg.com/vi/${item.id.replace('yt:video:', '')}/hqdefault.jpg`,
-    id: item.id.replace('yt:video:', '')
-  }));
-} catch (error) {
-  console.error('Error fetching YouTube feed:', error);
+const PLAYLIST_ID_SUPPORT = "PL_WIBP_Tkp9-_VjUESvmwaTtaT0xEINcZ";
+const PLAYLIST_ID_MINDFULNESS = "PL_WIBP_Tkp9_y8f_Ol0wMV8U93ngYOkaS";
+
+async function fetchPlaylistVideos(playlistId: string) {
+  try {
+    const parser = new Parser();
+    const FEED_URL = `https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`;
+    const feed = await parser.parseURL(FEED_URL);
+    return feed.items.map((item) => ({
+      title: item.title,
+      link: item.link,
+      pubDate: item.pubDate,
+      thumbnail: `https://i.ytimg.com/vi/${item.id.replace("yt:video:", "")}/hqdefault.jpg`,
+      id: item.id.replace("yt:video:", ""),
+    }));
+  } catch (error) {
+    console.error(
+      `Error fetching YouTube feed for playlist ${playlistId}:`,
+      error,
+    );
+    return [];
+  }
 }
 
+videosSupport = await fetchPlaylistVideos(PLAYLIST_ID_SUPPORT);
+videosMindfulness = await fetchPlaylistVideos(PLAYLIST_ID_MINDFULNESS);
 ---
 
 <Layout title="Resource Library">
   <div class="container section">
     <h1 class="text-center">Resource Library</h1>
     <p class="intro text-center">
-      This resource library is designed to grow. Check back regularly as new videos, tools, and guides are added.
+      This resource library is designed to grow. Check back regularly as new
+      videos, tools, and guides are added.
     </p>
 
     <!-- Video Resources Section -->
     <div class="resource-section">
       <h2 class="section-title">Video Resources</h2>
-      <p class="section-tagline">Short videos that explain key concepts and common questions.</p>
+      <p class="section-tagline">
+        Short videos that explain key concepts and common questions.
+      </p>
+
+      {/* Existing Playlist: Supporting Students */}
       <div class="playlist-block">
-        <h3 class="playlist-title">Supporting Students With Disabilities: Understanding the Basics</h3>
-        
-        {videos.length > 0 ? (
-          <div class="video-grid">
-            {videos.map((video) => (
-              <a href={video.link} target="_blank" rel="noopener noreferrer" class="video-card">
-                <div class="thumbnail-container">
-                  <img src={video.thumbnail} alt={video.title} loading="lazy" />
-                  <div class="play-icon">▶</div>
-                </div>
-                <h4 class="video-title">{video.title}</h4>
-              </a>
-            ))}
-          </div>
-        ) : (
-          <div class="empty-state">
-            <p>
-                No videos found or unable to load the feed.
-            </p>
-            <!-- Fallback/Example link provided by user -->
-            <p>
-                In the meantime, check out our latest video: <br/>
-                <a href="https://youtu.be/K51tG-Eu84I" target="_blank">Supporting Students With Disabilities (Watch on YouTube)</a>
-            </p>
-          </div>
-        )}
+        <h3 class="playlist-title">
+          Supporting Students With Disabilities: Understanding the Basics
+        </h3>
+
+        {
+          videosSupport.length > 0 ? (
+            <div class="video-grid">
+              {videosSupport.map((video) => (
+                <a
+                  href={video.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="video-card"
+                >
+                  <div class="thumbnail-container">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      loading="lazy"
+                    />
+                    <div class="play-icon">▶</div>
+                  </div>
+                  <h4 class="video-title">{video.title}</h4>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div class="empty-state">
+              <p>No videos found for this playlist.</p>
+              <p>
+                <a href="https://youtu.be/K51tG-Eu84I" target="_blank">
+                  Watch our latest video on YouTube
+                </a>
+              </p>
+            </div>
+          )
+        }
+      </div>
+
+      {/* New Playlist: Mindfulness & Meditation */}
+      <div class="playlist-block" style="margin-top: 3rem;">
+        <h3 class="playlist-title">
+          <a
+            href="https://www.youtube.com/playlist?list=PL_WIBP_Tkp9_y8f_Ol0wMV8U93ngYOkaS"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: none; color: inherit; border-bottom: 1px dotted currentColor;"
+          >
+            Mindfulness, Regulation & Emotional Well-Being Playlist
+          </a>
+        </h3>
+
+        {
+          videosMindfulness.length > 0 ? (
+            <div class="video-grid">
+              {videosMindfulness.map((video) => (
+                <a
+                  href={video.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="video-card"
+                >
+                  <div class="thumbnail-container">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      loading="lazy"
+                    />
+                    <div class="play-icon">▶</div>
+                  </div>
+                  <h4 class="video-title">{video.title}</h4>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div class="empty-state">
+              <p>No videos found for this playlist.</p>
+              <p>
+                <a href="https://youtu.be/pvZ48Mk8cck" target="_blank">
+                  Watch 'Mindfulness & Meditation with Young People' on YouTube
+                </a>
+              </p>
+            </div>
+          )
+        }
       </div>
     </div>
 
@@ -71,22 +146,42 @@ try {
     <!-- Downloadable Files Section -->
     <div class="resource-section">
       <h2 class="section-title">Downloadable Files</h2>
-      <p class="section-tagline">Free printable resource guides you can use right away.</p>
+      <p class="section-tagline">
+        Free printable resource guides you can use right away.
+      </p>
       <div class="video-grid">
-         <a href="/images/resources/Meditation and Mindfulness.pdf" download="Meditation and Mindfulness" class="video-card">
-            <div class="thumbnail-container">
-              <img src="/images/resources/Meditation and Mindfulness.png" alt="Meditation and Mindfulness" loading="lazy" />
-              <div class="play-icon" style="font-size: 2rem;">⬇</div>
-            </div>
-            <h4 class="video-title">Meditation and Mindfulness</h4>
-         </a>
-         <a href="/images/resources/writing-a-constructive-dear-teacher-letter.png" download="Writing a Constructive Dear Teacher Letter" class="video-card">
-            <div class="thumbnail-container">
-              <img src="/images/resources/writing-a-constructive-dear-teacher-letter.png" alt="Writing a Constructive Dear Teacher Letter" loading="lazy" />
-              <div class="play-icon" style="font-size: 2rem;">⬇</div>
-            </div>
-            <h4 class="video-title">Writing a Constructive Dear Teacher Letter</h4>
-         </a>
+        <a
+          href="/images/resources/Meditation and Mindfulness.pdf"
+          download="Meditation and Mindfulness"
+          class="video-card"
+        >
+          <div class="thumbnail-container">
+            <img
+              src="/images/resources/Meditation and Mindfulness.png"
+              alt="Meditation and Mindfulness"
+              loading="lazy"
+            />
+            <div class="play-icon" style="font-size: 2rem;">⬇</div>
+          </div>
+          <h4 class="video-title">Meditation and Mindfulness</h4>
+        </a>
+        <a
+          href="/images/resources/writing-a-constructive-dear-teacher-letter.png"
+          download="Writing a Constructive Dear Teacher Letter"
+          class="video-card"
+        >
+          <div class="thumbnail-container">
+            <img
+              src="/images/resources/writing-a-constructive-dear-teacher-letter.png"
+              alt="Writing a Constructive Dear Teacher Letter"
+              loading="lazy"
+            />
+            <div class="play-icon" style="font-size: 2rem;">⬇</div>
+          </div>
+          <h4 class="video-title">
+            Writing a Constructive Dear Teacher Letter
+          </h4>
+        </a>
       </div>
     </div>
 
@@ -97,10 +192,12 @@ try {
       <h2 class="section-title">Online Courses</h2>
       <p class="section-tagline">Step-by-step learning for deeper support.</p>
       <div class="coming-soon">
-        <p>In-depth courses to empower your advocacy journey are currently in development.</p>
+        <p>
+          In-depth courses to empower your advocacy journey are currently in
+          development.
+        </p>
       </div>
     </div>
-
   </div>
 </Layout>
 
@@ -162,13 +259,15 @@ try {
     background: white;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .video-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   }
 
   .thumbnail-container {
@@ -200,7 +299,7 @@ try {
     color: white;
     font-size: 3rem;
     opacity: 0.8;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .video-title {
@@ -212,7 +311,8 @@ try {
     line-height: 1.4;
   }
 
-  .empty-state, .coming-soon {
+  .empty-state,
+  .coming-soon {
     background-color: var(--color-secondary);
     padding: 2rem;
     border-radius: var(--border-radius);
