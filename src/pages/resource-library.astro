@@ -35,6 +35,7 @@ try {
     <!-- Video Resources Section -->
     <div class="resource-section">
       <h2 class="section-title">Video Resources</h2>
+      <p class="section-tagline">Short videos that explain key concepts and common questions.</p>
       <div class="playlist-block">
         <h3 class="playlist-title">Supporting Students With Disabilities: Understanding the Basics</h3>
         
@@ -70,7 +71,15 @@ try {
     <!-- Downloadable Files Section -->
     <div class="resource-section">
       <h2 class="section-title">Downloadable Files</h2>
+      <p class="section-tagline">Free printable resource guides you can use right away.</p>
       <div class="video-grid">
+         <a href="/images/resources/Meditation and Mindfulness.pdf" download="Meditation and Mindfulness" class="video-card">
+            <div class="thumbnail-container">
+              <img src="/images/resources/Meditation and Mindfulness.png" alt="Meditation and Mindfulness" loading="lazy" />
+              <div class="play-icon" style="font-size: 2rem;">⬇</div>
+            </div>
+            <h4 class="video-title">Meditation and Mindfulness</h4>
+         </a>
          <a href="/images/resources/writing-a-constructive-dear-teacher-letter.png" download="Writing a Constructive Dear Teacher Letter" class="video-card">
             <div class="thumbnail-container">
               <img src="/images/resources/writing-a-constructive-dear-teacher-letter.png" alt="Writing a Constructive Dear Teacher Letter" loading="lazy" />
@@ -86,6 +95,7 @@ try {
     <!-- Online Courses Section -->
     <div class="resource-section">
       <h2 class="section-title">Online Courses</h2>
+      <p class="section-tagline">Step-by-step learning for deeper support.</p>
       <div class="coming-soon">
         <p>In-depth courses to empower your advocacy journey are currently in development.</p>
       </div>
@@ -120,6 +130,14 @@ try {
     border-bottom: 2px solid var(--color-secondary);
     padding-bottom: var(--spacing-sm);
     display: inline-block;
+  }
+
+  .section-tagline {
+    font-size: 1.1rem;
+    color: var(--color-text-light, #666);
+    margin-bottom: var(--spacing-lg);
+    margin-top: -1rem;
+    display: block;
   }
 
   .playlist-block {
